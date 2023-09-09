@@ -1,44 +1,61 @@
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 0;
     margin: 0;
-    height: 100%;
-}
-
-.nav-admin{
-    height: 60px;
-    background-color: rgba(66, 156, 240, 0.925);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-right:15px ;
-    color: aliceblue;
-}
-
-.sideNav{
-    width: 200px;
-    background-color: #304f85;
-    height: 91.5vh;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .dFlex{
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 210px;
 }
 
-ul{
-    padding: 0;
-    margin: 0;
+.headerLogo{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(62, 62, 197);
+    height: 50px;
+    padding: 5px 10px;
+    align-items: center;
 }
 
-ul li{
-    text-align: center;
-    display: block;
-    padding: 10px;
+.sideNav{
+    position: absolute;
+    top: 60px;
+    display: none;
+    left: 0px;
+    background-color: rgb(48, 48, 161);
     color: aliceblue;
-    border: 2px solid rgb(74, 73, 73);
-    border-collapse: collapse   ;
+    width: 150px;
+    height: 91.5vh;
+    animation-name: slideNavBar;
+    animation-duration: 1s;
 }
 
-.sideBody{
-    padding: 10px;
+@keyframes slideNavBar {
+    from{left: -100px;}
+    to{left: 0px;}
+}
+
+.sideNav ul{
+    list-style-type: none;
+    padding: 0px;
+}
+
+.sideNav ul li{
+    text-align: center;
+    padding: 10px 5px;
+}
+
+.sideNav ul li:hover{
+    background-color: black;
+}
+
+#s{
+    appearance: none;
+}
+
+#s:checked ~ .sideNav{
+    display: block;
 }
